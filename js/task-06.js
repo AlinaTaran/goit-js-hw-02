@@ -14,25 +14,28 @@
 // некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат
 // prompt записывать в массив
 //  чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
+"use strict";
 
 let input;
 const numbers = [];
 let total = 0;
 
-while (input !== null) {
+do {
   input = prompt("Введите число!");
-
-  const number = Number(input);
-
-  if (number) {
-    numbers.push(number);
+  if (input === null) {
+    break;
   }
+  if (isNaN(+input)) {
+    alert("Было введено не число, попробуйте еще раз");
+    continue;
+  }
+  numbers.push(+input);
+} while (input !== null);
+
+for (let i = 0; i < numbers.length; i += 1) {
+  total += numbers[i];
 }
 
 if (numbers.length > 0) {
-  for (const number of numbers) {
-    total += number;
-  }
+  console.log(`общая сумма массива ${numbers} составляет ${total}`);
 }
-
-console.log(`общая сумма массива ${numbers} составляет ${total}`);

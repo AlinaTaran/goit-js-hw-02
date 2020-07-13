@@ -2,10 +2,10 @@
 //  принимающую строку (в строке будут только слова и пробелы) и цену гравировки одного слова, и возвращающую цену гравировки всех
 // слов в строке.
 
+"use strict";
+
 const calculateEngravingPrice = function (message, pricePerWord) {
-  const word = message.split(" ");
-  const totalPrice = word.length * pricePerWord;
-  return totalPrice;
+  return message.split(" ").length * pricePerWord;
 };
 
 console.log(

@@ -4,6 +4,8 @@
 // Нумерация должна начинаться с 1. К примеру для первого элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет
 // выведено '1 - Mango', а для индекса 2 выведет '3 - Ajax'.
 
+"use strict";
+
 const logItems = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     console.log(`${i + 1} - ${arr[i]}`);
