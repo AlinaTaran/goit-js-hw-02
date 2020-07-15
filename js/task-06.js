@@ -22,20 +22,18 @@ let total = 0;
 
 do {
   input = prompt("Введите число!");
-  if (input === null) {
-    break;
+  if (input !== null) {
+    if (Number.isNaN(+input)) {
+      alert("Было введено не число, попробуйте еще раз");
+      continue;
+    }
+    numbers.push(+input);
   }
-  if (isNaN(+input)) {
-    alert("Было введено не число, попробуйте еще раз");
-    continue;
-  }
-  numbers.push(+input);
 } while (input !== null);
 
-for (let i = 0; i < numbers.length; i += 1) {
-  total += numbers[i];
-}
-
-if (numbers.length > 0) {
-  console.log(`общая сумма массива ${numbers} составляет ${total}`);
+if (numbers.length) {
+  for (let i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
+  }
+  console.log(`общая сумма чисел ${numbers} составляет ${total}`);
 }
